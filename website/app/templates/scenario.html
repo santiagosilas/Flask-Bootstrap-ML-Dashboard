@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>{{title}}</h2>
+      <!-- Div Table -->
+      <div class="table-responsive">
+          <table class="table table-hover table-sm" cellspacing="0" width="100%">
+            <thead class="bg-info text-light">
+              <tr>
+                <th>#</th>
+                {% for column in columns %}
+                <th>{{column}}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for index, sample in enumerate(data) %}
+              <tr>
+                <td><a href="{{url_for('copy_to_form', scenario = scenario, index = index)}}"><i class="fas fa-link text-info"></i></a></td>
+                {% for column_index in range(columns.__len__()) %}  
+                    <td>{{sample[column_index]}}</td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <!-- Fim da div Table-Responsive-->
+      
+        <!-- Formulário-->
+        <h2>Formulário</h2>
+        <form class="container-fluid" method="post" action="{{url_for('enviar_exemplo', scenario = scenario)}}">
+            <div class="row alert alert-info bg-info text-light">
+
+              {% for index, column in enumerate(columns) %}
+                <div class="col-2">
+                    <input type="checkbox" style="margin:1rem;" name="checkbox{{index}}" id="" {{'checked' if loop.index < 5}}>
+                    <label for="f{{index}}">{{column}}</label>
+                    <input type="text" class="form-control form-control-sm" name="caixa{{index}}" value="{{selected[index] if selected }}">
+                </div>
+              {% endfor %}
+
+              <div class="col-12 py-1">
+                <button type="submit" class="btn btn-light float-right">Enviar</button>
+              </div>
+            </div>
+        </form>
+        <!-- Fim do Formulário -->
+      
+        <!-- Texto Explicativo para Exmplificar o Uso da API -->
+        <h2>Exemplo de Utilização da API</h2>
+        <div>
+          <div class="alert alert-info bg-light">
+            <pre><code class="text-info">POST Trequest Code</code></pre>
+          </div>
+        </div>
+        <!-- Fim do Texto Explicativo -->
+{% endblock %}

@@ -1,0 +1,66 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<div>
+
+    <div class="row py-3">
+
+        <div class="col-4">
+            <div class="card border-left-primary shadow h-10 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        <a class="nav-link" href="{{url_for('load_scenario', scenario = 1)}}">
+                            <i class="fas fa-users"></i>
+                            Cenário 1
+                        </a>
+                    </div>
+                    <img src="{{url_for('static', filename='img/users.png')}}" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-4">
+            <div class="card border-left-primary shadow h-10 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        <a class="nav-link" href="{{url_for('load_scenario', scenario = 2)}}">
+                            <i class="fas fa-users"></i>
+                            Cenário 1
+                        </a>
+                    </div>
+                    <img src="{{url_for('static', filename='img/users.png')}}" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card border-left-primary shadow h-10 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        <a class="nav-link" href="{{url_for('load_scenario', scenario = 3)}}">
+                            <i class="fas fa-users"></i>
+                            Cenário 1
+                        </a>
+                    </div>
+                    <img src="{{url_for('static', filename='img/users.png')}}" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+</div>
+<div style = "height:400px"></div>
+{% endblock %}
+
+
+

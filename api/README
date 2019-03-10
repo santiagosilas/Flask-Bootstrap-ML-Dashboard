@@ -1,0 +1,7 @@
+The simplest way to run this Api on a Server is:
+
+$nohup python3 run_on_server.py &
+
+The nohup command avoids that the app closes after end an ssh session.
+
+The & allows run a command without block the terminal
